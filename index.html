@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ممدوح & نعمة | Wedding Invitation</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Cairo", sans-serif;
+            background: #0b0b0b;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: #d4af37;
+            color: #111;
+        }
+
+        .gold {
+            color: #d4af37;
+        }
+
+
+        /* =========================
+           LANGUAGE BUTTON
+        ========================= */
+
+        .language-btn {
+            position: fixed;
+
+            top: 20px;
+            right: 20px;
+
+            z-index: 10000;
+
+            padding: 9px 18px;
+
+            border: 1px solid #d4af37;
+            border-radius: 30px;
+
+            background: rgba(10, 10, 10, .85);
+
+            color: #d4af37;
+
+            cursor: pointer;
+
+            font-family: "Cairo", sans-serif;
+            font-size: 13px;
+
+            transition: .3s;
+
+            backdrop-filter: blur(8px);
+        }
+
+        .language-btn:hover {
+            background: #d4af37;
+            color: #111;
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           PARTICLES
+        ========================= */
+
+        .particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #d4af37;
+            border-radius: 50%;
+            opacity: .6;
+            animation: floatParticle linear infinite;
+        }
+
+        @keyframes floatParticle {
+
+            0% {
+                transform: translateY(110vh) scale(.5);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: .8;
+            }
+
+            80% {
+                opacity: .8;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1.3);
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           OPENING SCREEN
+        ========================= */
+
+        .opening {
+            position: fixed;
+            inset: 0;
+
+            background:
+                radial-gradient(circle at center, #25200f 0%, #0b0b0b 60%);
+
+            z-index: 9999;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: 1.2s ease;
+        }
+
+        .opening.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .opening-content {
+            text-align: center;
+            animation: openingAppear 2s ease;
+        }
+
+        .small-text {
+            font-size: 14px;
+            letter-spacing: 4px;
+            color: #d4af37;
+            margin-bottom: 25px;
+        }
+
+        .opening-names {
+            font-family: "Amiri", serif;
+            font-size: clamp(55px, 12vw, 110px);
+            color: #fff;
+            line-height: 1;
+        }
+
+        .opening-names span {
+            color: #d4af37;
+        }
+
+        .opening-description {
+            margin-top: 25px;
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        .open-btn {
+            margin-top: 40px;
+            padding: 14px 38px;
+
+            background: transparent;
+            color: #d4af37;
+
+            border: 1px solid #d4af37;
+            border-radius: 50px;
+
+            cursor: pointer;
+            font-family: inherit;
+
+            transition: .4s;
+        }
+
+        .open-btn:hover {
+            background: #d4af37;
+            color: #111;
+            transform: scale(1.05);
+        }
+
+        @keyframes openingAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(212,175,55,.15),
+                    transparent 45%
+                ),
+                #0b0b0b;
+
+            text-align: center;
+
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .arabic-bismillah {
+            font-family: "Amiri", serif;
+            color: #d4af37;
+            font-size: 25px;
+            margin-bottom: 30px;
+        }
+
+        .hero-title {
+            font-family: "Amiri", serif;
+            font-size: clamp(70px, 13vw, 150px);
+            line-height: .9;
+            font-weight: 400;
+        }
+
+        .hero-title .amp {
+            color: #d4af37;
+            font-size: .6em;
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .hero-subtitle {
+            margin-top: 30px;
+            color: #aaa;
+            letter-spacing: 5px;
+            font-size: 13px;
+        }
+
+        .date-line {
+            margin-top: 35px;
+            color: #d4af37;
+            letter-spacing: 3px;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            color: #777;
+            font-size: 12px;
+        }
+
+        .scroll-down span {
+            display: block;
+            margin-top: 10px;
+            font-size: 20px;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(8px);
+            }
+
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            position: relative;
+            z-index: 2;
+            padding: 100px 20px;
+        }
+
+        .container {
+            width: min(1100px, 100%);
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title small {
+            color: #d4af37;
+            letter-spacing: 4px;
+        }
+
+        .section-title h2 {
+            font-family: "Amiri", serif;
+            font-size: 48px;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            color: #888;
+            margin-top: 10px;
+        }
+
+
+        /* =========================
+           INVITATION
+        ========================= */
+
+        .invitation {
+            text-align: center;
+        }
+
+        .invitation-card {
+            max-width: 800px;
+            margin: auto;
+
+            padding: 60px 30px;
+
+            border: 1px solid rgba(212,175,55,.25);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.03),
+                    rgba(255,255,255,.01)
+                );
+
+            position: relative;
+        }
+
+        .invitation-card::before,
+        .invitation-card::after {
+            content: "✦";
+            position: absolute;
+            color: #d4af37;
+            font-size: 25px;
+        }
+
+        .invitation-card::before {
+            top: 15px;
+            right: 20px;
+        }
+
+        .invitation-card::after {
+            bottom: 15px;
+            left: 20px;
+        }
+
+        .invitation-card p {
+            color: #ccc;
+            line-height: 2.2;
+            font-family: "Amiri", serif;
+            font-size: 23px;
+        }
+
+        .names {
+            color: #d4af37;
+            font-family: "Amiri", serif;
+            font-size: 45px;
+            margin: 25px 0;
+        }
+
+
+        /* =========================
+           EVENTS
+        ========================= */
+
+        .events {
+            background: #0e0e0e;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .event-card {
+            padding: 45px 30px;
+
+            text-align: center;
+
+            border: 1px solid rgba(212,175,55,.2);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #151515,
+                    #0d0d0d
+                );
+
+            transition: .5s;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 150px;
+            height: 150px;
+
+            border-radius: 50%;
+
+            background: rgba(212,175,55,.05);
+
+            top: -70px;
+            right: -70px;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            border-color: #d4af37;
+        }
+
+        .event-icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .event-card h3 {
+            font-family: "Amiri", serif;
+            font-size: 40px;
+            font-weight: 400;
+        }
+
+        .event-card .event-date {
+            color: #d4af37;
+            margin: 15px 0;
+        }
+
+        .event-card .event-time {
+            color: #aaa;
+        }
+
+
+        /* =========================
+           COUNTDOWN
+        ========================= */
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 10px;
+
+            max-width: 500px;
+            margin: 35px auto 0;
+        }
+
+        .time-box {
+            border: 1px solid rgba(212,175,55,.2);
+            padding: 15px 5px;
+            background: rgba(0,0,0,.2);
+        }
+
+        .time-box strong {
+            display: block;
+            font-size: 30px;
+            color: #d4af37;
+            font-weight: 400;
+        }
+
+        .time-box span {
+            color: #777;
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           LOCATION
+        ========================= */
+
+        .location {
+            text-align: center;
+        }
+
+        .location-card {
+            max-width: 700px;
+            margin: auto;
+
+            padding: 50px 30px;
+
+            border: 1px solid rgba(212,175,55,.2);
+        }
+
+        .location-icon {
+            font-size: 50px;
+        }
+
+        .location-card h3 {
+            font-family: "Amiri", serif;
+            font-size: 40px;
+            font-weight: 400;
+            margin: 15px 0;
+        }
+
+        .location-card p {
+            color: #888;
+        }
+
+        .map-btn {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 13px 35px;
+
+            border-radius: 50px;
+
+            background: #d4af37;
+            color: #111;
+
+            text-decoration: none;
+
+            transition: .3s;
+        }
+
+        .map-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(212,175,55,.2);
+        }
+
+
+        /* =========================
+           LOVE
+        ========================= */
+
+        .love-section {
+            text-align: center;
+            min-height: 70vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .love-content {
+            max-width: 700px;
+        }
+
+        .heart {
+            font-size: 55px;
+            color: #d4af37;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.15);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+
+        }
+
+        .love-content h2 {
+            font-family: "Amiri", serif;
+            font-size: clamp(55px, 10vw, 100px);
+            font-weight: 400;
+            margin: 20px 0;
+        }
+
+        .love-content p {
+            color: #777;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            position: relative;
+            z-index: 2;
+
+            padding: 35px 20px;
+
+            text-align: center;
+
+            border-top: 1px solid rgba(212,175,55,.1);
+
+            color: #666;
+        }
+
+        footer span {
+            color: #d4af37;
+        }
+
+
+        /* =========================
+           MUSIC BUTTON
+        ========================= */
+
+        .music-btn {
+            position: fixed;
+
+            bottom: 25px;
+            left: 25px;
+
+            width: 50px;
+            height: 50px;
+
+            border-radius: 50%;
+
+            border: 1px solid #d4af37;
+
+            background: #111;
+            color: #d4af37;
+
+            z-index: 500;
+
+            cursor: pointer;
+
+            font-size: 20px;
+        }
+
+
+        /* =========================
+           REVEAL
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+
+            transition: 1s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           YOUTUBE VIDEO
+        ========================= */
+
+        .youtube-container {
+            position: fixed;
+
+            width: 1px;
+            height: 1px;
+
+            overflow: hidden;
+
+            opacity: 0;
+            pointer-events: none;
+
+            bottom: 0;
+            right: 0;
+
+            z-index: -1;
+        }
+
+        .youtube-container iframe {
+            width: 1px;
+            height: 1px;
+            border: none;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width:700px) {
+
+            .language-btn {
+                top: 15px;
+                right: 15px;
+
+                padding: 8px 14px;
+
+                font-size: 12px;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 65px;
+            }
+
+            .hero-title .amp {
+                margin: 0 8px;
+            }
+
+            .section-title h2 {
+                font-size: 40px;
+            }
+
+            .invitation-card {
+                padding: 45px 20px;
+            }
+
+            .invitation-card p {
+                font-size: 20px;
+            }
+
+            .names {
+                font-size: 38px;
+            }
+
+            .event-card h3 {
+                font-size: 35px;
+            }
+
+            .countdown {
+                gap: 5px;
+            }
+
+            .time-box strong {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     LANGUAGE
+========================= -->
+
+<button class="language-btn" id="languageBtn">
+    English 🇬🇧
+</button>
+
+
+<!-- =========================
+     PARTICLES
+========================= -->
+
+<div class="particles" id="particles"></div>
+
+
+<!-- =========================
+     OPENING
+========================= -->
+
+<div class="opening" id="opening">
+
+    <div class="opening-content">
+
+        <div class="small-text" id="openingSmall">
+            WEDDING INVITATION
+        </div>
+
+        <div class="opening-names">
+            ممدوح
+            <span>&</span>
+            نعمة
+        </div>
+
+        <div class="opening-description" id="openingDescription">
+            يسرنا دعوتكم لمشاركتنا أجمل أيام العمر
+        </div>
+
+        <button class="open-btn" id="openInvitation">
+            افتح الدعوة ✨
+        </button>
+
+    </div>
+
+</div>
+
+<iframe
+    id="weddingVideo"
+    src="https://www.youtube.com/embed/q8BlGxlX6es?autoplay=1&mute=1&loop=1&playlist=q8BlGxlX6es&controls=0&playsinline=1&rel=0"
+    title="Ziad Ayman - Anisat Rouhi | زياد أيمن - أنيسة روحي"
+    frameborder="0"
+    allow="autoplay; encrypted-media; picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin"
+    >
+</iframe>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="arabic-bismillah" id="bismillah">
+            بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ
+        </div>
+
+        <div class="hero-title">
+
+            ممدوح
+
+            <span class="amp">&</span>
+
+            نعمة
+
+        </div>
+
+        <div class="hero-subtitle" id="heroSubtitle">
+            OUR FOREVER STARTS HERE
+        </div>
+
+        <div class="date-line">
+            ✦ 2026 ✦
+        </div>
+
+    </div>
+
+
+    <div class="scroll-down">
+
+        <span id="scrollText">
+            اكتشف الدعوة
+        </span>
+
+        <span>↓</span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INVITATION
+========================= -->
+
+<section class="invitation">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <small id="invitationSmall">
+                THE INVITATION
+            </small>
+
+            <h2 id="invitationTitle">
+                بكل الحب ندعوكم
+            </h2>
+
+        </div>
+
+
+        <div class="invitation-card reveal">
+
+            <p id="invitationFirst">
+                الحمد لله الذي بنعمته تتم الصالحات
+            </p>
+
+            <div class="names">
+                ممدوح ♥ نعمة
+            </div>
+
+            <p id="invitationText">
+                يسعدنا ويشرفنا أن نشارككم فرحتنا
+                في بداية أجمل فصل من حكايتنا،
+                ونتمنى أن تكتمل فرحتنا بوجودكم معنا.
+            </p>
+
+            <p id="invitationGift" style="margin-top:20px;">
+                وجودكم هو أجمل هدية لنا ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EVENTS
+========================= -->
+
+<section class="events">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <small id="eventsSmall">
+                OUR SPECIAL DAYS
+            </small>
+
+            <h2 id="eventsTitle">
+                تفاصيل الاحتفال
+            </h2>
+
+        </div>
+
+
+        <div class="events-grid">
+
+
+            <!-- HENNA -->
+
+            <div class="event-card reveal">
+
+                <div class="event-icon">
+                    🌙
+                </div>
+
+                <h3 id="hennaTitle">
+                    ليلة الحنة
+                </h3>
+
+                <div class="event-date" id="hennaDate">
+                    سيتم تحديد التاريخ
+                </div>
+
+                <div class="event-time" id="hennaTime">
+                    الساعة 08:00 مساءً
+                </div>
+
+
+                <div class="countdown">
+
+                    <div class="time-box">
+                        <strong id="hennaDays">00</strong>
+                        <span id="hennaDaysText">يوم</span>
+                    </div>
+
+                    <div class="time-box">
+                        <strong id="hennaHours">00</strong>
+                        <span id="hennaHoursText">ساعة</span>
+                    </div>
+
+                    <div class="time-box">
+                        <strong id="hennaMinutes">00</strong>
+                        <span id="hennaMinutesText">دقيقة</span>
+                    </div>
+
+                    <div class="time-box">
+                        <strong id="hennaSeconds">00</strong>
+                        <span id="hennaSecondsText">ثانية</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- WEDDING -->
+
+            <div class="event-card reveal">
+
+                <div class="event-icon">
+                    💍
+                </div>
+
+                <h3 id="weddingTitle">
+                    ليلة العمر
+                </h3>
+
+                <div class="event-date" id="weddingDate">
+                    سيتم تحديد التاريخ
+                </div>
+
+                <div class="event-time" id="weddingTime">
+                    الساعة 08:00 مساءً
+                </div>
+
+
+                <div class="countdown">
+
+                    <div class="time-box">
+                        <strong id="weddingDays">00</strong>
+                        <span id="weddingDaysText">يوم</span>
+                    </div>
+
+                    <div class="time-box">
+                        <strong id="weddingHours">00</strong>
+                        <span id="weddingHoursText">ساعة</span>
+                    </div>
+
+                    <div class="time-box">
+                        <strong id="weddingMinutes">00</strong>
+                        <span id="weddingMinutesText">دقيقة</span>
+                    </div>
+
+                    <div class="time-box">
+                        <strong id="weddingSeconds">00</strong>
+                        <span id="weddingSecondsText">ثانية</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LOCATION
+========================= -->
+
+<section class="location">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <small id="venueSmall">
+                THE VENUE
+            </small>
+
+            <h2 id="venueTitle">
+                مكان الاحتفال
+            </h2>
+
+        </div>
+
+
+        <div class="location-card reveal">
+
+            <div class="location-icon">
+                📍
+            </div>
+
+            <h3 id="venueName">
+                قاعة الزفاف
+            </h3>
+
+            <p id="venueDescription">
+                يسعدنا حضوركم ومشاركتنا فرحتنا
+            </p>
+
+            <a
+                class="map-btn"
+                href="https://maps.app.goo.gl/v2bA6N8hea2fq8qf9"
+                target="_blank"
+                id="mapButton"
+            >
+                📍 افتح اللوكيشن
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LOVE
+========================= -->
+
+<section class="love-section">
+
+    <div class="love-content reveal">
+
+        <div class="heart">
+            ♥
+        </div>
+
+        <h2>
+            ممدوح <span class="gold">&</span> نعمة
+        </h2>
+
+        <p id="loveText">
+            ومن هنا تبدأ أجمل حكاية...
+        </p>
+
+        <p id="loveText2" style="margin-top:20px;">
+            نتمنى أن تكونوا جزءاً من ذكرياتنا الجميلة ❤️
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer id="footerText">
+
+    Made with
+    <span>♥</span>
+    for
+    <span>ممدوح & نعمة</span>
+
+</footer>
+
+
+<!-- =========================
+     MUSIC BUTTON
+========================= -->
+
+<button class="music-btn" id="musicBtn">
+    🎵
+</button>
+
+
+<!-- =========================
+     OPTIONAL MP3
+========================= -->
+
+<audio id="weddingMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- =========================
+     YOUTUBE VIDEO
+========================= -->
+
+
+
+<script>
+
+
+/* ==================================
+   EVENT DATES
+================================== */
+
+const hennaDateTime = "2026-09-04T20:00:00";
+
+const weddingDateTime = "2026-09-05T20:00:00";
+
+
+/* ==================================
+   LANGUAGE
+================================== */
+
+let currentLanguage = "ar";
+
+
+const translations = {
+
+    ar: {
+
+        openingSmall: "WEDDING INVITATION",
+
+        openingDescription:
+            "يسرنا دعوتكم لمشاركتنا أجمل أيام العمر",
+
+        openButton:
+            "افتح الدعوة ✨",
+
+        bismillah:
+            "بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ",
+
+        heroSubtitle:
+            "OUR FOREVER STARTS HERE",
+
+        scrollText:
+            "اكتشف الدعوة",
+
+        invitationSmall:
+            "THE INVITATION",
+
+        invitationTitle:
+            "بكل الحب ندعوكم",
+
+        invitationFirst:
+            "الحمد لله الذي بنعمته تتم الصالحات",
+
+        invitationText:
+            "يسعدنا ويشرفنا أن نشارككم فرحتنا في بداية أجمل فصل من حكايتنا، ونتمنى أن تكتمل فرحتنا بوجودكم معنا.",
+
+        invitationGift:
+            "وجودكم هو أجمل هدية لنا ❤️",
+
+        eventsSmall:
+            "OUR SPECIAL DAYS",
+
+        eventsTitle:
+            "تفاصيل الاحتفال",
+
+        hennaTitle:
+            "ليلة الحنة",
+
+        hennaTime:
+            "الساعة 08:00 مساءً",
+
+        weddingTitle:
+            "ليلة العمر",
+
+        weddingTime:
+            "الساعة 08:00 مساءً",
+
+        days:
+            "يوم",
+
+        hours:
+            "ساعة",
+
+        minutes:
+            "دقيقة",
+
+        seconds:
+            "ثانية",
+
+        venueSmall:
+            "THE VENUE",
+
+        venueTitle:
+            "مكان الاحتفال",
+
+        venueName:
+            "قاعة الزفاف",
+
+        venueDescription:
+            "يسعدنا حضوركم ومشاركتنا فرحتنا",
+
+        mapButton:
+            "📍 افتح اللوكيشن",
+
+        loveText:
+            "ومن هنا تبدأ أجمل حكاية...",
+
+        loveText2:
+            "نتمنى أن تكونوا جزءاً من ذكرياتنا الجميلة ❤️",
+
+        footer:
+            'Made with <span>♥</span> for <span>ممدوح & نعمة</span>'
+
+    },
+
+
+    en: {
+
+        openingSmall:
+            "WEDDING INVITATION",
+
+        openingDescription:
+            "We are delighted to invite you to share the most beautiful days of our lives",
+
+        openButton:
+            "Open Invitation ✨",
+
+        bismillah:
+            "In the name of Allah, the Most Gracious, the Most Merciful",
+
+        heroSubtitle:
+            "OUR FOREVER STARTS HERE",
+
+        scrollText:
+            "Discover the Invitation",
+
+        invitationSmall:
+            "THE INVITATION",
+
+        invitationTitle:
+            "With All Our Love, We Invite You",
+
+        invitationFirst:
+            "Praise be to Allah, by whose grace all good things are completed.",
+
+        invitationText:
+            "We are delighted and honored to share our happiness with you as we begin the most beautiful chapter of our story. We hope our joy will be complete with your presence.",
+
+        invitationGift:
+            "Your presence is the most beautiful gift to us ❤️",
+
+        eventsSmall:
+            "OUR SPECIAL DAYS",
+
+        eventsTitle:
+            "Celebration Details",
+
+        hennaTitle:
+            "Henna Night",
+
+        hennaTime:
+            "8:00 PM",
+
+        weddingTitle:
+            "Wedding Night",
+
+        weddingTime:
+            "8:00 PM",
+
+        days:
+            "Days",
+
+        hours:
+            "Hours",
+
+        minutes:
+            "Minutes",
+
+        seconds:
+            "Seconds",
+
+        venueSmall:
+            "THE VENUE",
+
+        venueTitle:
+            "Wedding Venue",
+
+        venueName:
+            "Wedding Hall",
+
+        venueDescription:
+            "We would be delighted to have you celebrate our happiness with us.",
+
+        mapButton:
+            "📍 Open Location",
+
+        loveText:
+            "And here begins our most beautiful story...",
+
+        loveText2:
+            "We hope you will be part of our beautiful memories ❤️",
+
+        footer:
+            'Made with <span>♥</span> for <span>Mamdouh & Naema</span>'
+
+    }
+
+};
+
+
+function changeLanguage() {
+
+    currentLanguage =
+        currentLanguage === "ar" ? "en" : "ar";
+
+    const t =
+        translations[currentLanguage];
+
+
+    /* HTML Direction */
+
+    document.documentElement.lang =
+        currentLanguage;
+
+    document.documentElement.dir =
+        currentLanguage === "ar" ? "rtl" : "ltr";
+
+
+    /* Button */
+
+    document.getElementById("languageBtn").textContent =
+        currentLanguage === "ar"
+            ? "English 🇬🇧"
+            : "العربية 🇪🇬";
+
+
+    /* Text */
+
+    document.getElementById("openingSmall").textContent =
+        t.openingSmall;
+
+    document.getElementById("openingDescription").textContent =
+        t.openingDescription;
+
+    document.getElementById("openInvitation").textContent =
+        t.openButton;
+
+    document.getElementById("bismillah").textContent =
+        t.bismillah;
+
+    document.getElementById("heroSubtitle").textContent =
+        t.heroSubtitle;
+
+    document.getElementById("scrollText").textContent =
+        t.scrollText;
+
+    document.getElementById("invitationSmall").textContent =
+        t.invitationSmall;
+
+    document.getElementById("invitationTitle").textContent =
+        t.invitationTitle;
+
+    document.getElementById("invitationFirst").textContent =
+        t.invitationFirst;
+
+    document.getElementById("invitationText").textContent =
+        t.invitationText;
+
+    document.getElementById("invitationGift").textContent =
+        t.invitationGift;
+
+    document.getElementById("eventsSmall").textContent =
+        t.eventsSmall;
+
+    document.getElementById("eventsTitle").textContent =
+        t.eventsTitle;
+
+    document.getElementById("hennaTitle").textContent =
+        t.hennaTitle;
+
+    document.getElementById("hennaTime").textContent =
+        t.hennaTime;
+
+    document.getElementById("weddingTitle").textContent =
+        t.weddingTitle;
+
+    document.getElementById("weddingTime").textContent =
+        t.weddingTime;
+
+
+    /* Countdown labels */
+
+    document.getElementById("hennaDaysText").textContent =
+        t.days;
+
+    document.getElementById("hennaHoursText").textContent =
+        t.hours;
+
+    document.getElementById("hennaMinutesText").textContent =
+        t.minutes;
+
+    document.getElementById("hennaSecondsText").textContent =
+        t.seconds;
+
+    document.getElementById("weddingDaysText").textContent =
+        t.days;
+
+    document.getElementById("weddingHoursText").textContent =
+        t.hours;
+
+    document.getElementById("weddingMinutesText").textContent =
+        t.minutes;
+
+    document.getElementById("weddingSecondsText").textContent =
+        t.seconds;
+
+
+    /* Location */
+
+    document.getElementById("venueSmall").textContent =
+        t.venueSmall;
+
+    document.getElementById("venueTitle").textContent =
+        t.venueTitle;
+
+    document.getElementById("venueName").textContent =
+        t.venueName;
+
+    document.getElementById("venueDescription").textContent =
+        t.venueDescription;
+
+    document.getElementById("mapButton").textContent =
+        t.mapButton;
+
+
+    /* Love */
+
+    document.getElementById("loveText").textContent =
+        t.loveText;
+
+    document.getElementById("loveText2").textContent =
+        t.loveText2;
+
+
+    /* Footer */
+
+    document.getElementById("footerText").innerHTML =
+        t.footer;
+
+
+    /* Dates */
+
+    document.getElementById("hennaDate").textContent =
+        formatArabicDate(hennaDateTime);
+
+    document.getElementById("weddingDate").textContent =
+        formatArabicDate(weddingDateTime);
+
+}
+
+
+/* Language Button */
+
+document
+    .getElementById("languageBtn")
+    .addEventListener("click", changeLanguage);
+
+
+
+/* ==================================
+   FORMAT DATE
+================================== */
+
+function formatArabicDate(dateString) {
+
+    const date =
+        new Date(dateString);
+
+    return date.toLocaleDateString(
+        currentLanguage === "ar" ? "ar-EG" : "en-US",
+        {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        }
+    );
+
+}
+
+
+/* ==================================
+   COUNTDOWN
+================================== */
+
+function updateCountdown(targetDate, ids) {
+
+    const target =
+        new Date(targetDate).getTime();
+
+    const now =
+        new Date().getTime();
+
+    const difference =
+        target - now;
+
+
+    if (difference <= 0) {
+
+        document.getElementById(ids.days).textContent = "00";
+
+        document.getElementById(ids.hours).textContent = "00";
+
+        document.getElementById(ids.minutes).textContent = "00";
+
+        document.getElementById(ids.seconds).textContent = "00";
+
+        return;
+    }
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (difference /
+            (1000 * 60 * 60)) % 24
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference /
+            (1000 * 60)) % 60
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference / 1000) % 60
+        );
+
+
+    document.getElementById(ids.days).textContent =
+        String(days).padStart(2, "0");
+
+
+    document.getElementById(ids.hours).textContent =
+        String(hours).padStart(2, "0");
+
+
+    document.getElementById(ids.minutes).textContent =
+        String(minutes).padStart(2, "0");
+
+
+    document.getElementById(ids.seconds).textContent =
+        String(seconds).padStart(2, "0");
+
+}
+
+
+function updateAllCountdowns() {
+
+    updateCountdown(
+
+        hennaDateTime,
+
+        {
+            days: "hennaDays",
+            hours: "hennaHours",
+            minutes: "hennaMinutes",
+            seconds: "hennaSeconds"
+        }
+
+    );
+
+
+    updateCountdown(
+
+        weddingDateTime,
+
+        {
+            days: "weddingDays",
+            hours: "weddingHours",
+            minutes: "weddingMinutes",
+            seconds: "weddingSeconds"
+        }
+
+    );
+
+}
+
+
+updateAllCountdowns();
+
+setInterval(updateAllCountdowns, 1000);
+
+
+/* ==================================
+   YOUTUBE PLAYER
+================================== */
+
+let youtubePlayer = null;
+
+
+/*
+   Load YouTube API
+*/
+
+const youtubeScript =
+    document.createElement("script");
+
+youtubeScript.src =
+    "https://www.youtube.com/iframe_api";
+
+document.head.appendChild(youtubeScript);
+
+
+/*
+   YouTube creates this function automatically
+*/
+
+function onYouTubeIframeAPIReady() {
+
+    youtubePlayer =
+        new YT.Player("youtubeVideo", {
+
+            events: {
+
+                onReady: function () {
+
+                    console.log(
+                        "YouTube player ready"
+                    );
+
+                }
+
+            }
+
+        });
+
+}
+
+
+/* ==================================
+   OPEN INVITATION
+================================== */
+
+const opening =
+    document.getElementById("opening");
+
+
+const openButton =
+    document.getElementById("openInvitation");
+
+
+openButton.addEventListener("click", function () {
+
+    opening.classList.add("hide");
+
+    document.body.style.overflow = "auto";
+
+
+    /*
+       Start YouTube Video
+    */
+
+    if (
+        youtubePlayer &&
+        youtubePlayer.playVideo
+    ) {
+
+        youtubePlayer.playVideo();
+
+    }
+
+
+    /*
+       Start MP3 if available
+    */
+
+    playMusic();
+
+});
+
+
+/* ==================================
+   MUSIC
+================================== */
+
+const music =
+    document.getElementById("weddingMusic");
+
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+
+let musicPlaying = false;
+
+
+function playMusic() {
+
+    /*
+       YouTube is used as the main music/video.
+       Therefore MP3 is not automatically started.
+    */
+
+    if (
+        youtubePlayer &&
+        youtubePlayer.playVideo
+    ) {
+
+        youtubePlayer.playVideo();
+
+        musicPlaying = true;
+
+        musicBtn.textContent = "🔊";
+
+    }
+
+}
+
+
+musicBtn.addEventListener("click", function () {
+
+    if (!youtubePlayer) {
+        return;
+    }
+
+
+    if (musicPlaying) {
+
+        youtubePlayer.pauseVideo();
+
+        musicPlaying = false;
+
+        musicBtn.textContent = "🎵";
+
+    } else {
+
+        youtubePlayer.playVideo();
+
+        musicPlaying = true;
+
+        musicBtn.textContent = "🔊";
+
+    }
+
+});
+
+
+/* ==================================
+   PARTICLES
+================================== */
+
+const particles =
+    document.getElementById("particles");
+
+
+for (let i = 0; i < 45; i++) {
+
+    const particle =
+        document.createElement("div");
+
+
+    particle.className =
+        "particle";
+
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+
+    particle.style.animationDuration =
+        (5 + Math.random() * 10) + "s";
+
+
+    particle.style.animationDelay =
+        Math.random() * 8 + "s";
+
+
+    particle.style.width =
+        (2 + Math.random() * 3) + "px";
+
+
+    particle.style.height =
+        particle.style.width;
+
+
+    particles.appendChild(particle);
+
+}
+
+
+/* ==================================
+   SCROLL REVEAL
+================================== */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const observer =
+    new IntersectionObserver(
+
+        function(entries) {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: .15
+        }
+
+    );
+
+
+revealElements.forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+/* ==================================
+   INITIAL BODY STATE
+================================== */
+
+document.body.style.overflow =
+    "hidden";
+
+
+</script>
+
+</body>
+</html>
